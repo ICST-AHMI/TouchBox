@@ -70,14 +70,14 @@ function shearRight(_shearRight){
 	vShearHorizontal = vShearRight - vShearLeft;
 }
 
-function finger1(_posX, _posY){
-	vFinger1[0] = -_posX;
-	vFinger1[1] = _posY;
-}
-
-function finger2(_posX, _posY){
-	vFinger2[0] = -_posX;
-	vFinger2[1] = _posY;
+function finger(_id, _posX, _posY, _surface){
+	if(_id == 0){
+		vFinger1[0] = -_posX;
+		vFinger1[1] = _posY;
+	} else if(_id == 1){
+		vFinger2[0] = -_posX;
+		vFinger2[1] = _posY;
+	}
 }
 
 function bang(){

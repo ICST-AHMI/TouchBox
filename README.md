@@ -39,17 +39,15 @@ force = float in [Newton]
 ### /touch/shear/right \<force>
 force = float in [Newton]
 
-### /touch/finger/area \<id> \<area>
+
+### /touch/finger \<id> \<posX> \<posY> \<area>
 id = int (identification id of finger, starts with 0)
 
-area = float in mm^2
+posX = int in [pixel from center]
 
-### /touch/finger/position \<int> \<posX> \<posY>
-id = int (identification id of finger, starts with 0)
+posY = int in [pixel from center]
 
-posX = float
-
-posY = float 
+area = float in [mm^2]
 
 
 ## Installation
