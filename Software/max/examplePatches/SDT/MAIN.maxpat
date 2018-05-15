@@ -9,9 +9,9 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 45.0, 79.0, 1361.0, 757.0 ],
+		"rect" : [ 69.0, 124.0, 658.0, 740.0 ],
 		"bglocked" : 0,
-		"openinpresentation" : 0,
+		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
 		"default_fontface" : 0,
 		"default_fontname" : "Arial",
@@ -75,12 +75,12 @@
 					"id" : "obj-23",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "sdt.friction.plgin.maxpat",
+					"name" : "sdt.crumpling.plgin.maxpat",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 46.555664, 85.799988, 586.0, 550.0 ],
+					"patching_rect" : [ 46.555664, 87.799988, 586.0, 550.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 13.555664, 56.0, 617.0, 556.0 ],
 					"varname" : "pluginPatch",
@@ -426,7 +426,7 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-22",
-					"items" : [ "crumpling", ",", "friction", ",", "scraping" ],
+					"items" : [ "crumpling", ",", "friction", ",", "scraping", ",", "sinusoid" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -776,22 +776,26 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "sdt.friction.plgin.maxpat",
+				"name" : "sdt.crumpling.plgin.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150914_ICST/01_projects/shearBox/zenodo/TouchBox/Software/max/examplePatches/SDT",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "sdt.friction~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "sdt.inertial.mxo",
+				"name" : "sdt.impact~.mxo",
 				"type" : "iLaX"
 			}
 , 			{
 				"name" : "sdt.modal.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "sdt.crumpling~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "sdt.inertial.mxo",
 				"type" : "iLaX"
 			}
  ],
