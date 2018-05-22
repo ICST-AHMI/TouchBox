@@ -2,14 +2,14 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 0,
-			"revision" : 0,
+			"major" : 7,
+			"minor" : 3,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 69.0, 124.0, 658.0, 740.0 ],
+		"rect" : [ 57.0, 84.0, 658.0, 740.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -75,7 +75,7 @@
 					"id" : "obj-23",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "sdt.crumpling.plgin.maxpat",
+					"name" : "sdt.sinusoid.plgin.maxpat",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
@@ -113,9 +113,9 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 0,
-							"revision" : 0,
+							"major" : 7,
+							"minor" : 3,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -457,9 +457,9 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 0,
-							"revision" : 0,
+							"major" : 7,
+							"minor" : 3,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -633,10 +633,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 46.555664, 5.0, 104.0, 22.0 ],
-					"presentation_rect" : [ 46.555664, 5.0, 104.0, 22.0 ],
+					"patching_rect" : [ 46.555664, 5.0, 106.0, 22.0 ],
 					"style" : "",
-					"text" : "udpreceive 54321"
+					"text" : "udpreceive 34954"
 				}
 
 			}
@@ -688,14 +687,13 @@
 					"interpinlet" : 1,
 					"knobcolor" : [ 0.0, 0.8, 1.0, 1.0 ],
 					"maxclass" : "gain~",
-					"multichannelvariant" : 0,
 					"numinlets" : 2,
 					"numoutlets" : 2,
-					"outlettype" : [ "signal", "" ],
+					"outlettype" : [ "signal", "int" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 141.277893, 648.0, 37.555542, 79.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 13.555664, 620.0, 37.555542, 79.0 ],
+					"presentation_rect" : [ 4.555664, 629.0, 37.555542, 79.0 ],
 					"style" : "default"
 				}
 
@@ -776,27 +774,11 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "sdt.crumpling.plgin.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150914_ICST/01_projects/shearBox/zenodo/TouchBox/Software/max/examplePatches/SDT",
+				"name" : "sdt.sinusoid.plgin.maxpat",
+				"bootpath" : "~/Documents/01_projects/TouchBoxMk2/Zenodo/Software/max/examplePatches/SDT",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
-			}
-, 			{
-				"name" : "sdt.impact~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "sdt.modal.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "sdt.crumpling~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "sdt.inertial.mxo",
-				"type" : "iLaX"
 			}
  ],
 		"autosave" : 0,
