@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 177.0, 215.0, 657.0, 726.0 ],
+		"rect" : [ 679.0, 247.0, 657.0, 726.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -1223,7 +1223,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 232.555664, 644.38208, 45.0, 45.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 558.555664, 620.0, 72.0, 72.0 ],
+					"presentation_rect" : [ 108.555664, 620.0, 72.0, 72.0 ],
 					"style" : ""
 				}
 
@@ -1237,7 +1237,7 @@
 					"outlettype" : [ "float" ],
 					"patching_rect" : [ 185.555664, 648.0, 39.0, 79.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 53.111084, 620.0, 20.0, 79.0 ],
+					"presentation_rect" : [ 59.555664, 643.0, 20.0, 79.0 ],
 					"style" : "default"
 				}
 
@@ -1254,7 +1254,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 141.277893, 648.0, 37.555542, 79.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 4.555664, 629.0, 37.555542, 79.0 ],
+					"presentation_rect" : [ 17.555664, 620.0, 37.555542, 102.0 ],
 					"style" : "default"
 				}
 
@@ -1625,7 +1625,19 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "sdt.impact~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "sdt.modal.mxo",
+				"type" : "iLaX"
+			}
+, 			{
 				"name" : "sdt.crumpling~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "sdt.inertial.mxo",
 				"type" : "iLaX"
 			}
  ],

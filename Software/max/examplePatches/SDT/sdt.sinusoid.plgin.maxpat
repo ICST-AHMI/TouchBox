@@ -43,7 +43,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "int" ],
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
@@ -409,7 +409,7 @@
 					"presentation_linecount" : 2,
 					"presentation_rect" : [ 68.564514, 476.532288, 50.0, 29.0 ],
 					"style" : "",
-					"text" : "140.909091"
+					"text" : "140.909088"
 				}
 
 			}
@@ -469,7 +469,7 @@
 					"presentation_linecount" : 2,
 					"presentation_rect" : [ 316.564514, 476.532288, 50.0, 29.0 ],
 					"style" : "",
-					"text" : "154.545455"
+					"text" : "154.545456"
 				}
 
 			}
@@ -529,7 +529,7 @@
 					"presentation_linecount" : 2,
 					"presentation_rect" : [ 495.064514, 476.532288, 50.0, 29.0 ],
 					"style" : "",
-					"text" : "195.454545"
+					"text" : "195.454544"
 				}
 
 			}
@@ -895,10 +895,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "float" ],
-					"patching_rect" : [ 656.5, 679.0, 31.0, 19.0 ],
-					"presentation_rect" : [ 650.5, 643.0, 31.0, 19.0 ],
+					"patching_rect" : [ 656.5, 679.0, 38.0, 19.0 ],
 					"style" : "",
-					"text" : "/ 100."
+					"text" : "/ 1000."
 				}
 
 			}
@@ -1448,7 +1447,7 @@
 						}
 , 						{
 							"number" : 2,
-							"data" : [ 5, "<invalid>", "flonum", "float", 400.0, 5, "<invalid>", "flonum", "float", 2.339, 5, "<invalid>", "flonum", "float", 14.2, 5, "<invalid>", "number", "int", 3, 5, "obj-17", "multislider", "list", 23.148148, 5, "obj-15", "multislider", "list", 75.861115, 5, "obj-299", "multislider", "list", 2506, 5, "obj-26", "multislider", "list", 0.925926, 5, "obj-19", "number", "int", 2, 4, "<invalid>", "function", "clear", 8, "<invalid>", "function", "add_with_curve", 0.0, 0.0, 0, 0.0, 8, "<invalid>", "function", "add_with_curve", 641.562073, 100.0, 0, -0.25, 8, "<invalid>", "function", "add_with_curve", 711.695557, 29.591837, 0, -0.4, 8, "<invalid>", "function", "add_with_curve", 1000.0, 0.0, 0, -0.55, 5, "<invalid>", "function", "domain", 1000.0, 6, "<invalid>", "function", "range", 0.0, 100.0, 5, "<invalid>", "function", "mode", 1, 5, "<invalid>", "flonum", "float", 75.861115, 5, "<invalid>", "toggle", "int", 1, 5, "<invalid>", "number", "int", 600, 5, "<invalid>", "flonum", "float", 1.0, 5, "<invalid>", "flonum", "float", 0.8, 5, "<invalid>", "flonum", "float", 1.65, 5, "<invalid>", "flonum", "float", 400.0, 5, "<invalid>", "flonum", "float", 935.599976, 5, "<invalid>", "flonum", "float", 5680.0, 5, "<invalid>", "flonum", "float", 0.006, 5, "<invalid>", "flonum", "float", 0.003, 5, "<invalid>", "flonum", "float", 0.005, 5, "<invalid>", "flonum", "float", 80.0, 5, "<invalid>", "flonum", "float", 65.0, 5, "<invalid>", "flonum", "float", 70.0 ]
+							"data" : [ 5, "obj-17", "multislider", "list", 0.0, 5, "obj-15", "multislider", "list", 0.0, 5, "obj-299", "multislider", "list", 74, 5, "obj-26", "multislider", "list", 0.0, 5, "obj-19", "number", "int", 2, 5, "obj-3", "multislider", "list", 0.0, 5, "obj-8", "multislider", "list", 0.0, 5, "obj-69", "flonum", "float", 0.0, 5, "obj-75", "flonum", "float", 0.0, 5, "obj-79", "flonum", "float", 0.0, 5, "obj-80", "flonum", "float", 0.0, 6, "obj-91", "number~", "list", 0.0, 0.0, 5, "obj-98", "multislider", "list", 195.454544, 5, "obj-106", "multislider", "list", 154.545456, 5, "obj-109", "multislider", "list", 140.909088 ]
 						}
 , 						{
 							"number" : 3,
@@ -1480,7 +1479,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 553.489258, 10.0, 50.0, 19.0 ],
 					"style" : "",
-					"text" : "1"
+					"text" : "0."
 				}
 
 			}
