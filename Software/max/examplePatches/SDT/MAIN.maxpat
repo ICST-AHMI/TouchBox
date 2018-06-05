@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 679.0, 247.0, 657.0, 726.0 ],
+		"rect" : [ 122.0, 174.0, 657.0, 726.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -38,13 +38,26 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 43.055668, 654.0, 91.0, 22.0 ],
+					"style" : "",
+					"text" : "bp10~ 50. 300."
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 13.0,
 					"id" : "obj-45",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.833435, 749.0, 115.0, 23.0 ],
+					"patching_rect" : [ 6.889001, 828.0, 115.0, 23.0 ],
 					"style" : "",
 					"text" : "s from-lim-params"
 				}
@@ -1207,7 +1220,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 4,
 					"outlettype" : [ "signal", "signal", "list", "list" ],
-					"patching_rect" : [ 46.555664, 648.0, 84.0, 22.0 ],
+					"patching_rect" : [ -36.444332, 784.0, 84.0, 22.0 ],
 					"presentation_rect" : [ 46.555664, 648.0, 84.0, 22.0 ],
 					"style" : "",
 					"text" : "omx.peaklim~"
@@ -1294,7 +1307,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-84", 0 ],
-					"midpoints" : [ -378.5, 863.0, 56.055664, 863.0 ],
+					"midpoints" : [ -378.5, 863.0, -26.944332, 863.0 ],
 					"source" : [ "obj-13", 0 ]
 				}
 
@@ -1326,7 +1339,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-84", 0 ],
-					"midpoints" : [ -434.5, 863.0, 56.055664, 863.0 ],
+					"midpoints" : [ -434.5, 863.0, -26.944332, 863.0 ],
 					"source" : [ "obj-14", 0 ]
 				}
 
@@ -1334,7 +1347,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-84", 0 ],
-					"midpoints" : [ -490.5, 863.0, 56.055664, 863.0 ],
+					"midpoints" : [ -490.5, 863.0, -26.944332, 863.0 ],
 					"source" : [ "obj-15", 0 ]
 				}
 
@@ -1342,7 +1355,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-84", 0 ],
-					"midpoints" : [ -546.5, 863.0, 56.055664, 863.0 ],
+					"midpoints" : [ -546.5, 863.0, -26.944332, 863.0 ],
 					"source" : [ "obj-16", 0 ]
 				}
 
@@ -1350,7 +1363,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-84", 0 ],
-					"midpoints" : [ -602.5, 863.0, 56.055664, 863.0 ],
+					"midpoints" : [ -602.5, 863.0, -26.944332, 863.0 ],
 					"source" : [ "obj-17", 0 ]
 				}
 
@@ -1373,6 +1386,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-131", 0 ],
+					"source" : [ "obj-2", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-6", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-20", 0 ]
@@ -1389,6 +1409,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-84", 0 ],
+					"midpoints" : [ 56.055664, 639.0, -10.0, 639.0, -10.0, 771.0, -24.0, 771.0, -24.0, 780.0, -26.944332, 780.0 ],
 					"source" : [ "obj-23", 0 ]
 				}
 
@@ -1577,7 +1598,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-131", 0 ],
+					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-84", 0 ]
 				}
 
@@ -1619,6 +1640,13 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "sdt.crumpling.plgin.maxpat",
+				"bootpath" : "~/_LAVORO_ZH/_research/audio-haptic/01_projects/shearBox/zenodo/Software/max/examplePatches/SDT",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bp10~.maxpat",
 				"bootpath" : "~/_LAVORO_ZH/_research/audio-haptic/01_projects/shearBox/zenodo/Software/max/examplePatches/SDT",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
