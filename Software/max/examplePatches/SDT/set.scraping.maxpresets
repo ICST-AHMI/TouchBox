@@ -5,7 +5,7 @@
 		}
 , 		{
 			"number" : 2,
-			"data" : [ 5, "obj-222", "flonum", "float", 216.0, 5, "obj-210", "flonum", "float", 1.11, 5, "obj-206", "flonum", "float", 1.4, 5, "obj-175", "number", "int", 3, 5, "obj-17", "multislider", "list", 0.0, 5, "obj-15", "multislider", "list", 0.0, 5, "obj-299", "multislider", "list", 5896, 5, "obj-26", "multislider", "list", 12.727273, 5, "obj-19", "number", "int", 4, 5, "obj-93", "flonum", "float", 0.25, 5, "obj-25", "flonum", "float", 1.0, 5, "obj-18", "flonum", "float", 1.0, 5, "obj-95", "flonum", "float", 216.0, 5, "obj-96", "flonum", "float", 239.759995, 5, "obj-99", "flonum", "float", 302.399994, 5, "obj-6", "flonum", "float", 0.02, 5, "obj-102", "flonum", "float", 0.015, 5, "obj-5", "flonum", "float", 0.01, 5, "obj-4", "flonum", "float", 100.0, 5, "obj-105", "flonum", "float", 100.0, 5, "obj-3", "flonum", "float", 100.0 ]
+			"data" : [ 5, "obj-222", "flonum", "float", 216.0, 5, "obj-210", "flonum", "float", 1.11, 5, "obj-206", "flonum", "float", 1.4, 5, "obj-175", "number", "int", 3, 5, "obj-17", "multislider", "list", 0.074022, 5, "obj-15", "multislider", "list", 0.0, 5, "obj-299", "multislider", "list", 5896, 5, "obj-26", "multislider", "list", 5.454545, 5, "obj-19", "number", "int", 2, 5, "obj-93", "flonum", "float", 0.28, 5, "obj-25", "flonum", "float", 1.0, 5, "obj-18", "flonum", "float", 1.0, 5, "obj-95", "flonum", "float", 216.0, 5, "obj-96", "flonum", "float", 239.759995, 5, "obj-99", "flonum", "float", 302.399994, 5, "obj-6", "flonum", "float", 0.02, 5, "obj-102", "flonum", "float", 0.015, 5, "obj-5", "flonum", "float", 0.01, 5, "obj-4", "flonum", "float", 100.0, 5, "obj-105", "flonum", "float", 100.0, 5, "obj-3", "flonum", "float", 100.0 ]
 		}
  ]
 }
