@@ -25,7 +25,6 @@ A low-cost DIY interface for tracking the position of up to two fingers in conta
 ## Software
 
 
-
 ![image](GUIScreenShot.png)
 
 * Follow the steps:
@@ -41,7 +40,7 @@ A low-cost DIY interface for tracking the position of up to two fingers in conta
 
 * For sending the data to another application via OSC, enter the ip and port number.
 
-* If you need to calibrate the software, press "open calibration"
+* If you need to calibrate the software, press "calibration" and once done "store"
 
 
 ## OSC communication protocoll
