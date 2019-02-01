@@ -14,7 +14,7 @@ A low-cost DIY interface for tracking the position of up to two fingers in conta
 	3. [Arduino](http://arduino.cc/) code
 
 * Hardware:
-	1. 3D models (made with [Blender](https://blender.org))
+	1. 3D models (made with [Blender 2.79](https://blender.org) and [OnShape](https://onshape.com))
 	2. electronics schematics (made with [Fritzing](http://fritzing.org))
 	3. list of required hardware
 	
