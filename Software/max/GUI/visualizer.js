@@ -17,6 +17,7 @@ var vShearLeft;
 var vShearRight;
 var vShearHorizontal;
 var vShearVertical;
+var useVid = false;
 var vFinger = [[0, 0, 0],[0, 0, 0]];
 
 // process arguments
@@ -40,6 +41,10 @@ if (jsarguments.length>9)
 	vrgb2[2] = jsarguments[9]/255.;
 
 draw();
+
+function useVideo(_useVid){
+    useVid = _useVid;
+}
 
 function area(_area){
 	vArea = _area;
@@ -89,33 +94,54 @@ function draw()
 		glclear();			
 		glenable("line_smooth");
 	
-        for(var i = 0; i < 2; i++){
-            if(vFinger[i][2] > 0){
-                //moveto(-0.5,0.5);
-                moveto(vFinger[i][0] / 500., vFinger[i][1] / 500.);
-                //post("finger1 " + vFinger1[1] / 400. + "\n");
-                // fill bgcircle
+        if(useVid){
+            for(var i = 0; i < 2; i++){
+                if(vFinger[i][2] > 0){
+                    //moveto(-0.5,0.5);
+                    moveto(vFinger[i][0] / 500., vFinger[i][1] / 500.);
+                    //post("finger1 " + vFinger1[1] / 400. + "\n");
+                    // fill bgcircle
 
-                //shapeslice(180,1);
-                glcolor(vrgb2);
-                circle(Math.sqrt(vFinger[i][2]) + vWeight / 4000.);
-                glcolor(vbrgb);
-                circle(Math.sqrt(vFinger[i][2]));
-                //post("draw circle: " + Math.sqrt(vFinger[0][2]) + "\n");
-                // draw hour marks	
+                    //shapeslice(180,1);
+                    glcolor(vrgb2);
+                    circle(Math.sqrt(vFinger[i][2]) + vWeight / 4000.);
+                    glcolor(vbrgb);
+                    circle(Math.sqrt(vFinger[i][2]));
+                    //post("draw circle: " + Math.sqrt(vFinger[0][2]) + "\n");
+                    // draw hour marks	
 
-                beginstroke("basic2d");
-                strokeparam("order",1)
-                strokeparam("slices",2)
-                strokeparam("color",vfrgb);
-                strokeparam("scale",0.01);
-                strokepoint(vFinger[i][0] / 500., vFinger[i][1] / 500.);
-                strokepoint(vFinger[i][0] / 500. + vShearHorizontal / 600., vFinger[i][1] / 500. + vShearVertical / 600.);
-                endstroke();
-   
-            }            
+                    beginstroke("basic2d");
+                    strokeparam("order",1)
+                    strokeparam("slices",2)
+                    strokeparam("color",vfrgb);
+                    strokeparam("scale",0.01);
+                    strokepoint(vFinger[i][0] / 500., vFinger[i][1] / 500.);
+                    strokepoint(vFinger[i][0] / 500. + vShearHorizontal / 600., vFinger[i][1] / 500. + vShearVertical / 600.);
+                    endstroke();
+
+                }            
+            }
+        } else {
+            moveto(0, 0);
+            //post("finger1 " + vFinger1[1] / 400. + "\n");
+            // fill bgcircle
+
+            //shapeslice(180,1);
+            glcolor(vrgb2);
+            circle(vWeight / 4000.);
+            //post("draw circle: " + Math.sqrt(vFinger[0][2]) + "\n");
+            // draw hour marks	
+
+            beginstroke("basic2d");
+            strokeparam("order",1)
+            strokeparam("slices",2)
+            strokeparam("color",vfrgb);
+            strokeparam("scale",0.01);
+            strokepoint(0, 0);
+            strokepoint(vShearHorizontal / 600., vShearVertical / 600.);
+            endstroke();
+            
         }
-
 		/*
 		for (i=0;i<12;i++) {
 			theta = i/12*2*Math.PI;

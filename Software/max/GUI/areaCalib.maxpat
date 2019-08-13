@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 0,
-			"revision" : 4,
+			"revision" : 8,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -161,7 +161,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-50",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -371,11 +371,11 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-39",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "float" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 8.0, 15.0, 30.0, 30.0 ]
 				}
 
@@ -445,7 +445,7 @@
 					"patching_rect" : [ 1008.745972000000052, 123.5, 31.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 741.99993900000004, 33.0, 31.0, 20.0 ],
-					"text" : "4kg"
+					"text" : "3kg"
 				}
 
 			}
@@ -497,7 +497,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-4",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -509,7 +509,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-3",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -530,7 +530,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 0,
-							"revision" : 4,
+							"revision" : 8,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -575,7 +575,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 0,
-											"revision" : 4,
+											"revision" : 8,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -777,7 +777,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 0,
-											"revision" : 4,
+											"revision" : 8,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -938,11 +938,11 @@
 													"numinlets" : 4,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 1178.0, 211.5, 132.0, 22.0 ],
+													"patching_rect" : [ 1178.0, 211.5, 130.0, 22.0 ],
 													"presentation" : 1,
 													"presentation_linecount" : 2,
 													"presentation_rect" : [ 75.0, 75.0, 103.0, 35.0 ],
-													"text" : "pack addpoint 8 f 4000"
+													"text" : "pack addpoint 8 f 3000"
 												}
 
 											}
@@ -1571,7 +1571,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 0,
-											"revision" : 4,
+											"revision" : 8,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1604,7 +1604,6 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
-										"visible" : 1,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-35",
@@ -3391,7 +3390,7 @@
 					}
 ,
 					"text" : "autopattr",
-					"varname" : "u906000951"
+					"varname" : "u448004601"
 				}
 
 			}
@@ -3722,6 +3721,15 @@
 
 			}
  ],
+		"dependency_cache" : [ 			{
+				"name" : "SMean.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150914_ICST/01_projects/shearBox/zenodo/TouchBox/Software/max/GUI",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+ ],
+		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "newobjGreen-1",
 				"default" : 				{
