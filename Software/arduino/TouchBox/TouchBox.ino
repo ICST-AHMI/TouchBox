@@ -157,7 +157,7 @@ void setup()
   ADCSRA = 0;
   ADCSRB = 0; // Free-running mode
   
-  PRR &= ~bit(PRADC);      // Disable ADC power reduction
+  PRR0 &= ~bit(PRADC);      // Disable ADC power reduction
   
   //Multiplexer Selection Channel
   ADMUX = 0<<ADLAR; // right-aligned
@@ -401,4 +401,3 @@ void writeRegister(char registerAddress, char value){
   //Set the Chip Select pin high to signal the end of an SPI packet.
   digitalWrite(CS, HIGH);
 }
-
