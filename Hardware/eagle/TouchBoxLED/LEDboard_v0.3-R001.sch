@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.5.0">
+<eagle version="9.5.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
+<setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
@@ -5053,24 +5054,75 @@ Source: &lt;a href="http://www.bourns.com/pdfs/3314.pdf"&gt; Data sheet&lt;/a&gt
 <part name="R3" library="rcl" deviceset="R-EU_" device="R0805" value="10"/>
 <part name="POTI" library="rcl" deviceset="R-TRIMM" device="64Y" value="500"/>
 <part name="X2" library="con-molex" deviceset="22-23-2021" device=""/>
+<part name="X1" library="con-molex" deviceset="22-23-2021" device=""/>
+<part name="X3" library="con-molex" deviceset="22-23-2021" device=""/>
 </parts>
 <sheets>
 <sheet>
 <plain>
 </plain>
 <instances>
-<instance part="IR_LED" gate="G$1" x="5.08" y="78.74"/>
-<instance part="IR_LED1" gate="G$1" x="5.08" y="60.96"/>
-<instance part="R1" gate="G$1" x="5.08" y="91.44" rot="R90"/>
-<instance part="IR_LED2" gate="G$1" x="20.32" y="78.74"/>
-<instance part="IR_LED3" gate="G$1" x="20.32" y="60.96"/>
-<instance part="R2" gate="G$1" x="20.32" y="91.44" rot="R90"/>
-<instance part="IR_LED4" gate="G$1" x="35.56" y="78.74"/>
-<instance part="IR_LED5" gate="G$1" x="35.56" y="60.96"/>
-<instance part="R3" gate="G$1" x="35.56" y="91.44" rot="R90"/>
-<instance part="POTI" gate="G$1" x="-7.62" y="96.52" rot="MR180"/>
-<instance part="X2" gate="-1" x="-22.86" y="81.28" rot="R180"/>
-<instance part="X2" gate="-2" x="-22.86" y="83.82" rot="R180"/>
+<instance part="IR_LED" gate="G$1" x="5.08" y="78.74" smashed="yes">
+<attribute name="NAME" x="8.636" y="74.168" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="10.795" y="74.168" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="IR_LED1" gate="G$1" x="5.08" y="60.96" smashed="yes">
+<attribute name="NAME" x="8.636" y="56.388" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="10.795" y="56.388" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="R1" gate="G$1" x="5.08" y="91.44" smashed="yes" rot="R90">
+<attribute name="NAME" x="3.5814" y="87.63" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="8.382" y="87.63" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="IR_LED2" gate="G$1" x="20.32" y="78.74" smashed="yes">
+<attribute name="NAME" x="23.876" y="74.168" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="26.035" y="74.168" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="IR_LED3" gate="G$1" x="20.32" y="60.96" smashed="yes">
+<attribute name="NAME" x="23.876" y="56.388" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="26.035" y="56.388" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="R2" gate="G$1" x="20.32" y="91.44" smashed="yes" rot="R90">
+<attribute name="NAME" x="18.8214" y="87.63" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="23.622" y="87.63" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="IR_LED4" gate="G$1" x="35.56" y="78.74" smashed="yes">
+<attribute name="NAME" x="39.116" y="74.168" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="41.275" y="74.168" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="IR_LED5" gate="G$1" x="35.56" y="60.96" smashed="yes">
+<attribute name="NAME" x="39.116" y="56.388" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="41.275" y="56.388" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="R3" gate="G$1" x="35.56" y="91.44" smashed="yes" rot="R90">
+<attribute name="NAME" x="34.0614" y="87.63" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="38.862" y="87.63" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="POTI" gate="G$1" x="-7.62" y="96.52" smashed="yes" rot="MR180">
+<attribute name="NAME" x="-13.589" y="100.33" size="1.778" layer="95" rot="MR270"/>
+<attribute name="VALUE" x="-11.43" y="100.33" size="1.778" layer="96" rot="MR270"/>
+</instance>
+<instance part="X2" gate="-1" x="-22.86" y="81.28" smashed="yes" rot="R180">
+<attribute name="NAME" x="-25.4" y="82.042" size="1.524" layer="95" rot="R180"/>
+<attribute name="VALUE" x="-22.098" y="79.883" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="X2" gate="-2" x="-22.86" y="83.82" smashed="yes" rot="R180">
+<attribute name="NAME" x="-25.4" y="84.582" size="1.524" layer="95" rot="R180"/>
+</instance>
+<instance part="X1" gate="-1" x="-53.34" y="96.52" smashed="yes" rot="R180">
+<attribute name="NAME" x="-55.88" y="97.282" size="1.524" layer="95" rot="R180"/>
+<attribute name="VALUE" x="-52.578" y="95.123" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="X1" gate="-2" x="-53.34" y="99.06" smashed="yes" rot="R180">
+<attribute name="NAME" x="-55.88" y="99.822" size="1.524" layer="95" rot="R180"/>
+</instance>
+<instance part="X3" gate="-1" x="-43.18" y="99.06" smashed="yes">
+<attribute name="NAME" x="-40.64" y="98.298" size="1.524" layer="95"/>
+<attribute name="VALUE" x="-43.942" y="100.457" size="1.778" layer="96"/>
+</instance>
+<instance part="X3" gate="-2" x="-43.18" y="96.52" smashed="yes">
+<attribute name="NAME" x="-40.64" y="95.758" size="1.524" layer="95"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -5150,6 +5202,20 @@ Source: &lt;a href="http://www.bourns.com/pdfs/3314.pdf"&gt; Data sheet&lt;/a&gt
 <pinref part="POTI" gate="G$1" pin="A"/>
 <wire x1="-20.32" y1="83.82" x2="-20.32" y2="101.6" width="0.1524" layer="91"/>
 <wire x1="-20.32" y1="101.6" x2="-7.62" y2="101.6" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$10" class="0">
+<segment>
+<pinref part="X1" gate="-2" pin="S"/>
+<pinref part="X3" gate="-1" pin="S"/>
+<wire x1="-50.8" y1="99.06" x2="-45.72" y2="99.06" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$11" class="0">
+<segment>
+<pinref part="X1" gate="-1" pin="S"/>
+<pinref part="X3" gate="-2" pin="S"/>
+<wire x1="-50.8" y1="96.52" x2="-45.72" y2="96.52" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
