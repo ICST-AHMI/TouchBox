@@ -32,6 +32,7 @@ A low-cost DIY interface for tracking the position of up to three fingers in con
 	1. Refresh the list of all attached USB-devices and select the aurduino (probably appearing as 'usbmodem1411' or similiar)
 	2. Start application
 	3. zeroeing all force sensors
+	4. if an openMV module is inside, switch on fingertracking
 
 
 * For sending the data to another application via OSC, enter the ip and port number.
