@@ -90,6 +90,26 @@ print("Waiting for Arduino...")
 # Arduino starts to poll the OpenMV Cam for data. Otherwise the I2C byte framing gets messed up,
 # and etc. So, keep the Arduino in reset until the OpenMV Cam is "Waiting for Arduino...".
 
+# SENDING the I2C data
+def sendingData( idx, posX, posY, size, numOfB ):
+    text = str(idx) + "|" + str(int(posX)) + "|" + str(int(posY)) + "|" + str(int(size)) + "|" + str(int(numOfB)) +"\n"
+    data = ustruct.pack("<%ds" % len(text), text)
+
+    try:
+        bus.send(ustruct.pack("<h", len(data)), timeout=500) # Send the len first (16-bits).
+        try:
+           bus.send(data, timeout=500) # Send the data second.
+           #print("Sent Data!") # Only reached on no error.
+        except OSError as err:
+            pass # Don't care about errors - so pass.
+            # Note that there are 3 possible errors. A timeout error, a general purpose error, or
+            # a busy error. The error codes are 116, 5, 16 respectively for "err.arg[0]".
+    except OSError as err:
+        pass # Don't care about errors - so pass.
+        # Note that there are 3 possible errors. A timeout error, a general purpose error, or
+        # a busy error. The error codes are 116, 5, 16 respectively for "err.arg[0]".
+
+    return
 
 while(True):
     clock.tick()
@@ -107,30 +127,43 @@ while(True):
 
     blobNumber = 0
 
-    for blob in img.find_blobs(thresholds, pixels_threshold=50, area_threshold=50):
-        img.draw_rectangle(blob.rect())
-        img.draw_cross(blob.cx(), blob.cy())
-        #print("pixels", int(blob.pixels()))
+    allBlobs = img.find_blobs(thresholds, pixels_threshold=50, area_threshold=50)
 
-        text = str(blobNumber) + "|" + str(int(blob.cx())) + "|" + str(int(blob.cy())) + "|" + str(int(blob.pixels())) + "\n"
-        data = ustruct.pack("<%ds" % len(text), text)
+    blobCount = len(allBlobs)
 
-        # SENDING the I2C data
-        try:
-            bus.send(ustruct.pack("<h", len(data)), timeout=500) # Send the len first (16-bits).
+    if blobCount < 3:
+        sendingData(2, 0, 0, 0, blobCount)
+    if blobCount < 2:
+        sendingData(1, 0, 0, 0, blobCount)
+    if blobCount < 1:
+        sendingData(0, 0, 0, 0, blobCount)
+    else:
+        for blob in allBlobs:
+            img.draw_rectangle(blob.rect())
+            img.draw_cross(blob.cx(), blob.cy())
+            #print("pixels", int(blob.pixels()))
+
+            sendingData(blobNumber, blob.cx(), blob.cy(), blob.pixels(), blobCount)
+
+            text = str(blobNumber) + "|" + str(int(blob.cx())) + "|" + str(int(blob.cy())) + "|" + str(int(blob.pixels())) + "|" + str(int(blobCount)) +"\n"
+            data = ustruct.pack("<%ds" % len(text), text)
+
+            # SENDING the I2C data
             try:
-                bus.send(data, timeout=500) # Send the data second.
-                #print("Sent Data!") # Only reached on no error.
+                bus.send(ustruct.pack("<h", len(data)), timeout=500) # Send the len first (16-bits).
+                try:
+                    bus.send(data, timeout=500) # Send the data second.
+                    #print("Sent Data!") # Only reached on no error.
+                except OSError as err:
+                    pass # Don't care about errors - so pass.
+                    # Note that there are 3 possible errors. A timeout error, a general purpose error, or
+                    # a busy error. The error codes are 116, 5, 16 respectively for "err.arg[0]".
             except OSError as err:
                 pass # Don't care about errors - so pass.
                 # Note that there are 3 possible errors. A timeout error, a general purpose error, or
                 # a busy error. The error codes are 116, 5, 16 respectively for "err.arg[0]".
-        except OSError as err:
-            pass # Don't care about errors - so pass.
-            # Note that there are 3 possible errors. A timeout error, a general purpose error, or
-            # a busy error. The error codes are 116, 5, 16 respectively for "err.arg[0]".
 
-        blobNumber += 1
+            blobNumber += 1
 
     img.draw_line(0, img.height() // 4 * 1, img.width(), img.height() // 4 * 1, color = (255, 0, 0), size = 30, thickness = 1)
     img.draw_line(0, img.height() // 4 * 2, img.width(), img.height() // 4 * 2, color = (255, 0, 0), size = 30, thickness = 1)
@@ -138,4 +171,3 @@ while(True):
     img.draw_line(img.width() // 4 * 1, 0, img.width() // 4 * 1, img.height(), color = (0, 255, 0), size = 30, thickness = 1)
     img.draw_line(img.width() // 4 * 2, 0, img.width() // 4 * 2, img.height(), color = (0, 255, 0), size = 30, thickness = 1)
     img.draw_line(img.width() // 4 * 3, 0, img.width() // 4 * 3, img.height(), color = (0, 255, 0), size = 30, thickness = 1)
-

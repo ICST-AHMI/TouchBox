@@ -1,5 +1,5 @@
 # The TouchBox
-A low-cost DIY interface for tracking the position of up to two fingers in contact with its top surface, measuring their contact areas as well as 3D (normal and lateral) forces, and providing complex vibrotactile feedback.
+A low-cost DIY interface for tracking the position of up to three fingers in contact with its top surface, measuring their contact areas as well as 3D (normal and lateral) forces, and providing complex vibrotactile feedback.
 
 ![image](rendering.png)
 
@@ -8,14 +8,15 @@ A low-cost DIY interface for tracking the position of up to two fingers in conta
 ## Content
 
 * Software:
-	1. GUI (based on [MaxMSP](https://cycling74.com). You dont need a license to run this patch)
+	1. GUI - based on [MaxMSP](https://cycling74.com). You don't need a license to run this patch
 	2. Example Patches for vibration and optional audio feedback.
 	3. [Arduino](http://arduino.cc/) code
+	4. [OpenMV](https://openmv.io/) code
 
 
 * Hardware:
-	1. 3D models (made with [Blender 2.79](https://blender.org) and [OnShape](https://onshape.com))
-	2. electronics schematics (made with [Fritzing](http://fritzing.org))
+	1. 3D models (STEP) and plans (PDF) - made with [OnShape](https://onshape.com)
+	2. electronics schematics - made with [Eagle](https://www.autodesk.com/products/eagle/overview)
 	3. list of required hardware
 
 
@@ -28,14 +29,9 @@ A low-cost DIY interface for tracking the position of up to two fingers in conta
 ![image](GUIScreenShot.png)
 
 * Follow the steps:
-	1. Show live video for fingertracking
-	2. attach all cables and query system for attached videocameras
-	3. Select Touchbox's camera (using the included drivers it will probably appear as 'Built-in iSight)
-	4. Open the camera stream
-	5. Select the resolution
-	6. Refresh the list of all attached USB-devices and select the aurduino (probably appearing as 'usbmodem1411' or similiar)
-	7. Start application
-	8. zeroeing all force sensors
+	1. Refresh the list of all attached USB-devices and select the aurduino (probably appearing as 'usbmodem1411' or similiar)
+	2. Start application
+	3. zeroeing all force sensors
 
 
 * For sending the data to another application via OSC, enter the ip and port number.
@@ -73,16 +69,13 @@ area = float in [mm^2]
 
 ## Installation
 
-For running the GUI, you need to install [MaxMSP](https://cycling74.com) and the [cv.jit package](http://jmpelletier.com/cvjit/) (see [instructions](https://docs.cycling74.com/max7/vignettes/packages)).
-
-You may also need to install the driver for the camera.
-* For OSX use the kext-driver file and install it with [KextDrop](https://mac.softpedia.com/get/Utilities/Kext-Drop.shtml).
+For running the GUI, you need to install [MaxMSP](https://cycling74.com).
 
 ---
 
 ## Licenses
 
-The arduino code is licensed under [GNU](http://www.gnu.org/licenses/)
+The arduino and openMV code is licensed under [GNU](http://www.gnu.org/licenses/)
 
 for everything else:  
 

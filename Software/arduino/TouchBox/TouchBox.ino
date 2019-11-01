@@ -55,9 +55,11 @@
 // cccc       = 4  bit for channel info  0...15
 // vvvvvvvvvv = 10 bit for value         0.....1023
 //
-// channel 0...3  values from ADC (ie. FSR's)
-// channel 8...10 values from SPI (ie. Accelerometer x, y, z)
-//
+// channel 0...4  values from ADC (ie. FSR's)
+// channel 5...13 values from I2C (ie. openMV)
+// channel 14 value tells how many blobs are sent from openMV
+// channel 15 is currently free for future use
+// 
 // Please note that this firmware version was used for testing if the sampling rate was 
 // actually stable.
 // This was done by probing pin 12, so there's an extra line of code used for that:
@@ -118,8 +120,8 @@ int ADCValue;
 
 int ADInterrupCounter = 0;
 
-void setup();
-void loop();
+//void setup();
+//void loop();
 
 void setup()
 { 
@@ -240,24 +242,34 @@ void loop() {
       temp = 0;
       while(Wire.available()) buff[temp++] = Wire.read();
       
-     // the structure of the buffer is: <id>|<centroidX>|<centroidY>|<pixels>
+      // the structure of the buffer is: <id>|<centroidX>|<centroidY>|<pixels>|<numberOfBlobs>
       String str = String(buff);
       String index = str.substring(0, str.indexOf("|"));
       str = str.substring(str.indexOf("|") + 1, str.length());
       String centroidX = str.substring(0, str.indexOf("|"));
       str = str.substring(str.indexOf("|") + 1, str.length());
       String centroidY = str.substring(0, str.indexOf("|"));
-      String pixels = str.substring(str.indexOf("|") + 1, str.length());
+      str = str.substring(str.indexOf("|") + 1, str.length());
+      String pixels = str.substring(0, str.indexOf("|"));
+      String numberOfBlobs = str.substring(str.indexOf("|") + 1, str.length());
 
       byte i = (byte) index.toInt();
+
+      // we send the total number of blobs detected, though we can only 
+      // send the data for the first three.
+      int numOfB = numberOfBlobs.toInt();
+      TX(numOfB, 14);
+      
       if(i < 3){ 
-        // we can only transfer additionally 3 blobs through our special data protocol
+        // we can only transfer 3 blobs through our data protocol
         int cx = centroidX.toInt();
         int cy = centroidY.toInt();
         int pix = pixels.toInt();
-        TX(cx, 5 + i * 3);
-        TX(cy, 6 + i * 3);
+        // we send in this order, so on maxmsp side, we can simply put the
+        // finger info into a [pack i i i] - object
         TX(pix,7 + i * 3);
+        TX(cy, 6 + i * 3);
+        TX(cx, 5 + i * 3);
       }
 
     } else {
