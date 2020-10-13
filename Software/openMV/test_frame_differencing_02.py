@@ -39,11 +39,8 @@ ir_led    = LED(4)
 
 green_led.on()
 
-# debugging
-print_blob_info = True
-
-# manage ir_led state
-use_bg_subtractioin = False
+#manage ir_led state
+use_bg_subtractioin = True
 ir_led_active = True
 
 # set up lens correction and resolution
@@ -52,18 +49,18 @@ use_hi_res = False
 display_grid_lines = False
 
 # draw blobs on screen
-draw_blobs = True
+draw_blobs = False
 
 # blob thresholds
-blob_pixels_threshold = 50 #default = 50
-blob_area_threshold = 50 #default = 50
+blob_pixels_threshold = 50
+blob_area_threshold = 50
 
 # sensor stuff:
 start_delay_time = 2500
 sensor_flip_X = True
 
 if use_lens_corr: # setup ROI (low/high res + lense cor)
-    roi_x = [20,24]  #default = [20,12] --> [20,24]?
+    roi_x = [20,12]
     roi_y = [0,3]
 else: # setup ROI (low/high res + NO lense cor)
     roi_x = [30,24]
@@ -109,22 +106,9 @@ print('y_scale_fac: ' + str(y_scale_fac) + ' mm/pixel')
 print('overall_scale_fac: ' + str(overall_scale_fac) + ' mm/pixel')
 
 
-
-#thresholds = [(150, 255)] # try for grayscale
-
 # Color Tracking Thresholds (L Min, L Max, A Min, A Max, B Min, B Max)
-#thresholds = [(83, 100, -30, 30, -30, 30)] # try modifying to make detection more robust
-thresholds = [(94, 100, -30, 30, -30, 30)] # try modifying to make detection more robust
-# --> THRESHOLDS SEEM TO BE VERY DEPENDANT ON AMBIENT LIGHT
+thresholds = [(83, 100, -30, 30, -30, 30)] # try modifying to make detection more robust
 
-# The below thresholds track in general red/green things. You may wish to tune them...
-#thresholds = [(83, 100, -4, 9, -16, 8)] # original thresholds from martin
-
-#thresholds = [(30, 100, 15, 127, 15, 127), # generic_red_thresholds
-#             (30, 100, -64, -8, -32, 32), # generic_green_thresholds
-#              (0, 15, 0, 40, -80, -20)] # generic_blue_thresholds
-# You may pass up to 16 thresholds above. However, it's not really possible to segment any
-# scene with 16 thresholds before color thresholds start to overlap heavily.
 
 sensor.reset()
 sensor.set_pixformat(sensor.RGB565) # original
@@ -150,12 +134,10 @@ print('roi_mask: ' + str(img_mask))
 
 clock = time.clock()
 
-# Only blobs that with more pixels than "pixel_threshold" and more area than "area_threshold" are
-# returned by "find_blobs" below. Change "pixels_threshold" and "area_threshold" if you change the
-# camera resolution. Don't set "merge=True" becuase that will merge blobs which we don't want here.
+# setup extra frame buffer
+extra_fb = sensor.alloc_extra_fb(sensor.width(), sensor.height(), sensor.RGB565)
 
 # create the pin to control the IR Leds
-
 ir_led_pin = Pin("P3", Pin.OUT_PP, Pin.PULL_NONE)
 # # #  = "P0" = id = pin name
 # # # Pin.OUT_PP - configure the pin for output, with push-pull control;
@@ -232,14 +214,11 @@ while(True):
 
     # manage ir_LED
     if use_bg_subtractioin:
+        extra_fb.replace(img)
         ir_led_active = not ir_led_active
         ir_led_pin.value(ir_led_active)
 
     clock.tick()
-    # This example shows off how to use the lens correction method to fix lens
-    # distortion in an image. Increase the strength below until lines
-    # are straight in the view.
-    # Zoom in (higher) or out (lower) until you see enough of the image.
 
 
     if use_lens_corr:
@@ -250,27 +229,19 @@ while(True):
     # disable the IR pin once the sensor has finished.
     #ir_led_pin.off() # fold this into main logic
 
+
+    if use_bg_subtractioin:
+        img.difference(extra_fb)
+
+
     frameNumber += 1
-    #print("time", clock.avg())
-    #print("fps", clock.fps())
 
-    # draw black masking lines in image to cover Lofelt and wires
-    #if use_hi_res:
-        #img.draw_line(img.width()-24, 0, img.width()-24, img.height(), 0, 48)
-        #img.draw_line(24, 0, 24, img.height(), 0, 48)
-    #else:
-
-    #img.draw_line(img.width()-8, 0, img.width()-8, img.height(), 0, 16)
-    #img.draw_line(12, 0, 12, img.height(), 0, 24)
 
     # find blobs
     blobNumber = 0
     #allBlobs = img.find_blobs(thresholds, pixels_threshold=50, area_threshold=50) # NO MASK
     allBlobs = img.find_blobs(thresholds, pixels_threshold=blob_pixels_threshold, area_threshold=blob_area_threshold, roi=img_mask) # w/ roi mask
     blobCount = len(allBlobs)
-
-    if print_blob_info:
-        print(allBlobs)
 
     # if less than 3 blobs are found, zero out the data for not existing ones (b/c old data is left in there)
     if blobCount < 3: # if less than 3...
@@ -288,36 +259,6 @@ while(True):
                     #print("pixels", int(blob.pixels()))
 
                 #sendingData(blobNumber, blob.cx()*x_scale_fac, blob.cy()*y_scale_fac, blob.pixels()*overall_scale_fac*overall_scale_fac, blobCount) # output in mm
-                sendingData(blobNumber, blob.cx(), blob.cy(), 0.1*blob.pixels(), blobCount) # output in pixels
+                sendingData(blobNumber, blob.cx(), blob.cy(), blob.pixels(), blobCount) # output in pixels
 
                 blobNumber += 1
-
-    #img.draw_line(roi_x[0], 0, roi_x[0], img.height(), color = (255, 0, 0), thickness = 1)
-    #img.draw_line(img.width() - roi_x[1], 0, img.width() - roi_x[1], img.height(), color = (0, 0, 255), thickness = 1)
-    #img.draw_line(0, roi_y[0], img.width(), roi_y[0], color = (255, 0, 0), size = 30, thickness = 1)
-    #img.draw_line(0, img.height() - roi_y[1] - 1, img.width(), img.height() - roi_y[1] - 1, color = (0, 0, 255), size = 30, thickness = 1)
-
-    # Note // = integer division...
-    if display_grid_lines: # draw grid lines (all) - num_squares x num_squares, 10 mm^2 squares
-
-        if True: # draw grid lines (outside horizontal)
-            img.draw_line(0, y_min, img.width(), y_min, color = (255, 0, 0), size = 30, thickness = 1)
-            img.draw_line(0, y_max, img.width(), y_max, color = (255, 0, 0), size = 30, thickness = 1)
-
-        if True: # draw grid lines (inside horizontal)
-            img.draw_line(0, y_min + delta_y // 5*1, img.width(), y_min + delta_y // 5*1, color = (255, 0, 0), size = 30, thickness = 1)
-            img.draw_line(0, y_min + delta_y // 5*2, img.width(), y_min + delta_y // 5*2, color = (255, 0, 0), size = 30, thickness = 1)
-            img.draw_line(0, y_min + delta_y // 5*3, img.width(), y_min + delta_y // 5*3, color = (255, 0, 0), size = 30, thickness = 1)
-            img.draw_line(0, y_min + delta_y // 5*4, img.width(), y_min + delta_y // 5*4, color = (255, 0, 0), size = 30, thickness = 1)
-
-        if True: # draw grid lines (outside vertical)
-            img.draw_line(x_min, 0, x_min, img.height(), color = (255, 0, 0), size = 30, thickness = 1)
-            img.draw_line(x_max, 0, x_max, img.height(), color = (255, 0, 0), size = 30, thickness = 1)
-
-        if True: # draw grid lines (inside vertical)
-            img.draw_line(x_min + delta_x // 5*1, 0, x_min + delta_x // 5*1, img.height(), color = (255, 0, 0), size = 30, thickness = 1)
-            img.draw_line(x_min + delta_x // 5*2, 0, x_min + delta_x // 5*2, img.height(), color = (255, 0, 0), size = 30, thickness = 1)
-            img.draw_line(x_min + delta_x // 5*3, 0, x_min + delta_x // 5*3, img.height(), color = (255, 0, 0), size = 30, thickness = 1)
-            img.draw_line(x_min + delta_x // 5*4, 0, x_min + delta_x // 5*4, img.height(), color = (255, 0, 0), size = 30, thickness = 1)
-
-

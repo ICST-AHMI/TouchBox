@@ -39,11 +39,8 @@ ir_led    = LED(4)
 
 green_led.on()
 
-# debugging
-print_blob_info = True
-
-# manage ir_led state
-use_bg_subtractioin = False
+#manage ir_led state
+use_bg_subtractioin = True
 ir_led_active = True
 
 # set up lens correction and resolution
@@ -55,15 +52,15 @@ display_grid_lines = False
 draw_blobs = True
 
 # blob thresholds
-blob_pixels_threshold = 50 #default = 50
-blob_area_threshold = 50 #default = 50
+blob_pixels_threshold = 50
+blob_area_threshold = 50
 
 # sensor stuff:
 start_delay_time = 2500
 sensor_flip_X = True
 
 if use_lens_corr: # setup ROI (low/high res + lense cor)
-    roi_x = [20,24]  #default = [20,12] --> [20,24]?
+    roi_x = [20,12]
     roi_y = [0,3]
 else: # setup ROI (low/high res + NO lense cor)
     roi_x = [30,24]
@@ -113,8 +110,7 @@ print('overall_scale_fac: ' + str(overall_scale_fac) + ' mm/pixel')
 #thresholds = [(150, 255)] # try for grayscale
 
 # Color Tracking Thresholds (L Min, L Max, A Min, A Max, B Min, B Max)
-#thresholds = [(83, 100, -30, 30, -30, 30)] # try modifying to make detection more robust
-thresholds = [(94, 100, -30, 30, -30, 30)] # try modifying to make detection more robust
+thresholds = [(83, 100, -30, 30, -30, 30)] # try modifying to make detection more robust
 # --> THRESHOLDS SEEM TO BE VERY DEPENDANT ON AMBIENT LIGHT
 
 # The below thresholds track in general red/green things. You may wish to tune them...
@@ -149,6 +145,10 @@ img_mask = (roi_x[0], roi_y[0], img.width() - (roi_x[0] + roi_x[1]), img.height(
 print('roi_mask: ' + str(img_mask))
 
 clock = time.clock()
+
+# setup extra frame buffer
+extra_fb = sensor.alloc_extra_fb(sensor.width(), sensor.height(), sensor.RGB565)
+
 
 # Only blobs that with more pixels than "pixel_threshold" and more area than "area_threshold" are
 # returned by "find_blobs" below. Change "pixels_threshold" and "area_threshold" if you change the
@@ -269,9 +269,6 @@ while(True):
     allBlobs = img.find_blobs(thresholds, pixels_threshold=blob_pixels_threshold, area_threshold=blob_area_threshold, roi=img_mask) # w/ roi mask
     blobCount = len(allBlobs)
 
-    if print_blob_info:
-        print(allBlobs)
-
     # if less than 3 blobs are found, zero out the data for not existing ones (b/c old data is left in there)
     if blobCount < 3: # if less than 3...
         sendingData(2, 0, 0, 0, blobCount)
@@ -288,7 +285,7 @@ while(True):
                     #print("pixels", int(blob.pixels()))
 
                 #sendingData(blobNumber, blob.cx()*x_scale_fac, blob.cy()*y_scale_fac, blob.pixels()*overall_scale_fac*overall_scale_fac, blobCount) # output in mm
-                sendingData(blobNumber, blob.cx(), blob.cy(), 0.1*blob.pixels(), blobCount) # output in pixels
+                sendingData(blobNumber, blob.cx(), blob.cy(), blob.pixels(), blobCount) # output in pixels
 
                 blobNumber += 1
 
