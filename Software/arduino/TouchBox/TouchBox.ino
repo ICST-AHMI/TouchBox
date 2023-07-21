@@ -55,9 +55,11 @@
 // cccc       = 4  bit for channel info  0...15
 // vvvvvvvvvv = 10 bit for value         0.....1023
 //
-// channel 0...3  values from ADC (ie. FSR's)
-// channel 8...10 values from SPI (ie. Accelerometer x, y, z)
-//
+// channel 0...4  values from ADC (ie. FSR's)
+// channel 5...13 values from I2C (ie. openMV)
+// channel 14 value tells how many blobs are sent from openMV
+// channel 15 is currently free for future use
+// 
 // Please note that this firmware version was used for testing if the sampling rate was 
 // actually stable.
 // This was done by probing pin 12, so there's an extra line of code used for that:
@@ -70,8 +72,10 @@
 #include <avr/power.h>
 #include <avr/interrupt.h>
 
-//Add the SPI library so we can communicate with the ADXL345 sensor
-#include <SPI.h>
+#include <Wire.h>
+
+#define BAUD_RATE 115200
+#define CHAR_BUF 128
 
 // clear bit of special function register (sfr)
 // _BV(bit) converts bit to byte
@@ -116,26 +120,13 @@ int ADCValue;
 
 int ADInterrupCounter = 0;
 
-void setup();
-void loop();
+//void setup();
+//void loop();
 
 void setup()
 { 
   //Create a serial connection to display the data on the terminal.
-  Serial.begin(115200);
-  //Serial.begin(38400);
-  
-  /********** SPI setup *********************************************************/
-  
-  //Initiate an SPI communication instance.
-  SPI.begin();
-  //Configure the SPI connection for the ADXL345.
-  SPI.setDataMode(SPI_MODE3);
-  //Create a serial connection to display the data on the terminal.
-  
-  writeRegister(DATA_FORMAT, DATA_FORMAT_VALUE);
-  //Put the ADXL345 into Measurement Mode by writing 0x08 to the POWER_CTL register.
-  writeRegister(POWER_CTL, 0x08);  //Measurement mode  
+  Serial.begin(BAUD_RATE);
 
   /******************************************************************************/
 
@@ -144,7 +135,6 @@ void setup()
   cli(); // disable interrupts while messing with their settings
   
   /********** ADC setup *********************************************************/
-    
   
   /* internal pull-ups interfere with the ADC. disable the
   * pull-up on the pin if it's being used for ADC. either
@@ -229,7 +219,67 @@ void setup()
   sei(); // turn interrupts back on
 
   ADCSRA |= 1<<ADSC;       // Conversion started  
+
+  Wire.begin();
+  delay(1000); // Give the OpenMV Cam time to bootup.
 }
+
+/**
+ * Inside the loop we will only send the recieved I2C commands from the openMC device
+ */
+void loop() {
+  int32_t temp = 0;
+  char buff[CHAR_BUF] = {0};
+
+  Wire.requestFrom(0x12, 2);
+  if(Wire.available() == 2) { // got length?
+
+    temp = Wire.read() | (Wire.read() << 8);
+ 
+    Wire.requestFrom(0x12, temp);
+    if(Wire.available() == temp) { // got full message?
+
+      temp = 0;
+      while(Wire.available()) buff[temp++] = Wire.read();
+      
+      // the structure of the buffer is: <id>|<centroidX>|<centroidY>|<pixels>|<numberOfBlobs>
+      String str = String(buff);
+      String index = str.substring(0, str.indexOf("|"));
+      str = str.substring(str.indexOf("|") + 1, str.length());
+      String centroidX = str.substring(0, str.indexOf("|"));
+      str = str.substring(str.indexOf("|") + 1, str.length());
+      String centroidY = str.substring(0, str.indexOf("|"));
+      str = str.substring(str.indexOf("|") + 1, str.length());
+      String pixels = str.substring(0, str.indexOf("|"));
+      String numberOfBlobs = str.substring(str.indexOf("|") + 1, str.length());
+
+      byte i = (byte) index.toInt();
+
+      // we send the total number of blobs detected, though we can only 
+      // send the data for the first three.
+      int numOfB = numberOfBlobs.toInt();
+      TX(numOfB, 14);
+      
+      if(i < 3){ 
+        // we can only transfer 3 blobs through our data protocol
+        int cx = centroidX.toInt();
+        int cy = centroidY.toInt();
+        int pix = pixels.toInt();
+        // we send in this order, so on maxmsp side, we can simply put the
+        // finger info into a [pack i i i] - object
+        TX(pix,7 + i * 3);
+        TX(cy, 6 + i * 3);
+        TX(cx, 5 + i * 3);
+      }
+
+    } else {
+      while(Wire.available()) Wire.read(); // Toss garbage bytes.
+    }
+  } else {
+    while(Wire.available()) Wire.read(); // Toss garbage bytes.
+  }
+}
+
 
 void TX(int value, byte channel)
 {
@@ -253,11 +303,6 @@ void TX(int value, byte channel)
 
   Serial.write(MSB);
   Serial.write(LSB);
-}
-
-void loop()
-{
-  //Serial.println("nextframe");
 }
 
 //interrupt function call
@@ -342,62 +387,4 @@ ISR(ADC_vect)
     
     sei();// turn interrupts back on
   }
-}
-
-void sendSPI(){
-  // Reading 6 bytes of data starting at register DATAX0 will retrieve 
-  // the x,y and z acceleration values from the ADXL345.
-  // The results of the read operation will get stored to the SPIvalues[] buffer.
-  readRegister(DATAX0, 6, SPIvalues);
-
-  // The ADXL345 gives 10-bit acceleration values, but they are stored as 
-  // bytes (8-bits). To get the full value, two bytes must be combined for each axis.
-  // The X value is stored in values[0] and values[1].
-  x = (((int)SPIvalues[1]<<8)|(int)SPIvalues[0]) + 512;
-  TX(x, 1);
-  // The Y value is stored in values[2] and values[3].
-  y = (((int)SPIvalues[3]<<8)|(int)SPIvalues[2]) + 512;
-  TX(y, 2);
-  // The Z value is stored in values[4] and values[5].
-  z = (((int)SPIvalues[5]<<8)|(int)SPIvalues[4]) + 512;
-  TX(z, 3);
-}
-
-// This function will read a certain number of registers starting from a specified address 
-// and store their values in a buffer.
-// Parameters:
-//  char registerAddress - The register addresse to start the read sequence from.
-//  int numBytes - The number of registers that should be read.
-//  char * values - A pointer to a buffer where the results of the operation should be stored.
-void readRegister(char registerAddress, int numBytes, unsigned char * values){
-  //Since we're performing a read operation, the most significant bit of the register address should be set.
-  char address = 0x80 | registerAddress;
-  //If we're doing a multi-byte read, bit 6 needs to be set as well.
-  if(numBytes > 1)address = address | 0x40;
-  
-  //Set the Chip select pin low to start an SPI packet.
-  digitalWrite(CS, LOW);
-  //Transfer the starting register address that needs to be read.
-  SPI.transfer(address);
-  //Continue to read registers until we've read the number specified, storing the results to the input buffer.
-  for(int i=0; i<numBytes; i++){
-    values[i] = SPI.transfer(0x00);
-  }
-  //Set the Chips Select pin high to end the SPI packet.
-  digitalWrite(CS, HIGH);
-}
-
-// This function will write a value to a register on the ADXL345.
-// Parameters:
-//  char registerAddress - The register to write a value to
-//  char value - The value to be written to the specified register.
-void writeRegister(char registerAddress, char value){
-  //Set Chip Select pin low to signal the beginning of an SPI packet.
-  digitalWrite(CS, LOW);
-  //Transfer the register address over SPI.
-  SPI.transfer(registerAddress);
-  //Transfer the desired register value over SPI.
-  SPI.transfer(value);
-  //Set the Chip Select pin high to signal the end of an SPI packet.
-  digitalWrite(CS, HIGH);
 }
