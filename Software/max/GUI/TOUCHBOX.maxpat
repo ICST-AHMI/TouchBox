@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 2,
+			"minor" : 5,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 321.0, 87.0, 1495.0, 1014.0 ],
+		"rect" : [ 666.0, 389.0, 952.0, 499.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,7 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-16",
@@ -47,8 +48,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 2,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -81,7 +82,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
-						"visible" : 1,
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-18",
@@ -126,7 +127,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 487.0, 147.0, 158.5, 22.0 ],
-									"text" : "data_recorder 50"
+									"text" : "50"
 								}
 
 							}
@@ -264,6 +265,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
 									"patching_rect" : [ 128.5, 432.0, 150.0, 22.0 ]
 								}
 
@@ -841,6 +843,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-80",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"numinlets" : 2,
 					"numoutlets" : 0,
@@ -849,8 +852,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 2,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -883,6 +886,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-54",
@@ -1041,7 +1045,7 @@
 									"patching_rect" : [ 544.0, 168.0, 64.0, 20.0 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 27.500000000000028, 77.0, 45.0, 20.0 ],
-									"text" : "finger2"
+									"text" : "finger3"
 								}
 
 							}
@@ -1071,7 +1075,7 @@
 									"patching_rect" : [ 434.0, 414.284065000000055, 160.0, 18.0 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 74.500000000000028, 9.284065000000055, 154.0, 18.0 ],
-									"text" : "    [mm]          [mm]          [mm  ]"
+									"text" : "raw data"
 								}
 
 							}
@@ -1086,7 +1090,7 @@
 									"patching_rect" : [ 375.0, 168.0, 64.0, 20.0 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 27.500000000000028, 54.0, 45.0, 20.0 ],
-									"text" : "finger1"
+									"text" : "finger2"
 								}
 
 							}
@@ -1101,7 +1105,7 @@
 									"patching_rect" : [ 203.239482499999923, 172.0, 64.0, 20.0 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 27.500000000000028, 31.0, 45.0, 20.0 ],
-									"text" : "finger0"
+									"text" : "finger1"
 								}
 
 							}
@@ -2073,8 +2077,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 2,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2107,6 +2111,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"comment" : "",
@@ -2303,14 +2308,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 2,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 785.0, 455.0, 1012.0, 571.0 ],
+						"rect" : [ 746.0, 455.0, 1012.0, 571.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2337,7 +2342,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
-						"visible" : 1,
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
@@ -3614,6 +3619,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-139",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"numinlets" : 2,
 					"numoutlets" : 2,
@@ -3623,8 +3629,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 2,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3657,6 +3663,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-78",
@@ -3691,8 +3698,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 2,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3725,6 +3732,7 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
+										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-38",
@@ -3984,8 +3992,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 2,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -4018,6 +4026,7 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
+										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-38",
@@ -4265,8 +4274,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 2,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -4299,6 +4308,7 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
+										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-38",
@@ -4835,8 +4845,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 2,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -4869,6 +4879,7 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
+										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"comment" : "",
@@ -4990,7 +5001,7 @@
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 427.794556000000057, 408.284065000000055, 80.0, 35.0 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 48.696280999999999, 88.0, 84.0, 35.0 ]
+									"presentation_rect" : [ 134.696280999999999, 410.0, 84.0, 35.0 ]
 								}
 
 							}
@@ -5062,7 +5073,7 @@
 									"patching_rect" : [ 96.239482499999923, 455.284065000000055, 64.0, 20.0 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 1.696280999999999, 65.0, 45.0, 20.0 ],
-									"text" : "finger2"
+									"text" : "finger3"
 								}
 
 							}
@@ -5076,7 +5087,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 271.082965499999773, 282.284065000000055, 15.0, 13.0 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 150.0, -0.715934999999945, 15.0, 13.0 ],
+									"presentation_rect" : [ 174.69628124999997, -1.897260099649429, 13.0, 13.0 ],
 									"text" : "2"
 								}
 
@@ -5200,13 +5211,14 @@
 									"fontname" : "Arial",
 									"fontsize" : 10.0,
 									"id" : "obj-71",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 168.406734499999743, 282.284065000000055, 124.0, 18.0 ],
+									"patching_rect" : [ 168.406734499999743, 282.284065000000055, 124.0, 29.0 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 46.608817999999999, 0.5, 130.0, 18.0 ],
-									"text" : "[mm]       [mm]       [mm  ]"
+									"presentation_rect" : [ 46.608817999999999, 0.5, 163.0, 18.0 ],
+									"text" : "x [mm]     y [mm]    area  [mm ]"
 								}
 
 							}
@@ -5233,7 +5245,7 @@
 									"patching_rect" : [ 96.239482499999923, 393.284065000000055, 64.0, 20.0 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 1.696280999999999, 42.0, 45.0, 20.0 ],
-									"text" : "finger1"
+									"text" : "finger2"
 								}
 
 							}
@@ -5248,7 +5260,7 @@
 									"patching_rect" : [ 96.239482499999923, 333.284065000000055, 64.0, 20.0 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 1.696280999999999, 19.0, 45.0, 20.0 ],
-									"text" : "finger0"
+									"text" : "finger1"
 								}
 
 							}
@@ -5476,8 +5488,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 2,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -5510,6 +5522,7 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
+										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-60",
@@ -5521,8 +5534,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 1,
-															"revision" : 2,
+															"minor" : 5,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -5555,6 +5568,7 @@
 														"tags" : "",
 														"style" : "",
 														"subpatcher_template" : "",
+														"assistshowspatchername" : 0,
 														"boxes" : [ 															{
 																"box" : 																{
 																	"id" : "obj-3",
@@ -5830,8 +5844,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 1,
-															"revision" : 2,
+															"minor" : 5,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -5864,6 +5878,7 @@
 														"tags" : "",
 														"style" : "",
 														"subpatcher_template" : "",
+														"assistshowspatchername" : 0,
 														"boxes" : [ 															{
 																"box" : 																{
 																	"id" : "obj-3",
@@ -6867,7 +6882,7 @@
 ,
 					"patching_rect" : [ 9.254714999999999, 225.75, 193.0, 94.500000000000057 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 5.087462999999985, 225.0, 185.0, 128.0 ],
+					"presentation_rect" : [ 1.0, 230.789917000000003, 193.174925999999942, 128.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -7077,8 +7092,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 2,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -7111,6 +7126,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-73",
@@ -7384,8 +7400,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 2,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -7418,6 +7434,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-58",
@@ -7453,8 +7470,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 2,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -7487,6 +7504,7 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
+										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-39",
@@ -8557,6 +8575,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-15",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "ShearBox_serial.maxpat",
 					"numinlets" : 1,
@@ -8763,8 +8782,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 2,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -8797,6 +8816,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-12",
@@ -8819,8 +8839,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 2,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -8853,6 +8873,7 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
+										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-27",
@@ -9000,8 +9021,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 2,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -9034,6 +9055,7 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
+										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-25",
@@ -9181,8 +9203,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 2,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -9215,6 +9237,7 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
+										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-23",
@@ -9362,8 +9385,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 2,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -9396,6 +9419,7 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
+										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-22",
@@ -9543,8 +9567,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 2,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -9577,6 +9601,7 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
+										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-32",
@@ -9724,8 +9749,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 2,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -9758,6 +9783,7 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
+										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-32",
@@ -9905,8 +9931,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 2,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -9939,6 +9965,7 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
+										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-32",
@@ -10086,8 +10113,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 2,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -10120,6 +10147,7 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
+										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-41",
@@ -10267,8 +10295,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 2,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -10301,6 +10329,7 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
+										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-32",
@@ -10631,7 +10660,7 @@
 									"maxclass" : "inlet",
 									"numinlets" : 0,
 									"numoutlets" : 1,
-									"outlettype" : [ "" ],
+									"outlettype" : [ "float" ],
 									"patching_rect" : [ 6.0, 16.0, 30.0, 30.0 ]
 								}
 
@@ -10787,6 +10816,7 @@
 									"enablevscroll" : 0,
 									"id" : "obj-1",
 									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
 									"maxclass" : "bpatcher",
 									"name" : "weightCalib.maxpat",
 									"numinlets" : 6,
@@ -11174,8 +11204,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 2,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -11208,6 +11238,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"fontname" : "Arial",
@@ -11582,8 +11613,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 2,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -11616,6 +11647,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"fontname" : "Arial",
@@ -12996,57 +13028,57 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "visualizer.js",
-				"bootpath" : "~/Documents/ICST-Audio_Haptic/01_projects/TouchBox/zenodo/Software/max/GUI",
+				"name" : "AvgMean.js",
+				"bootpath" : "~/_LAVORO_ZH/_research/audio-haptic/01_projects/shearBox/zenodo/Software/max/GUI",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "settings.json",
-				"bootpath" : "~/Documents/ICST-Audio_Haptic/01_projects/TouchBox/zenodo/Software/max/GUI",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "SMean.maxpat",
-				"bootpath" : "~/Documents/ICST-Audio_Haptic/01_projects/TouchBox/zenodo/Software/max/GUI",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "AvgMean.js",
-				"bootpath" : "~/Documents/ICST-Audio_Haptic/01_projects/TouchBox/zenodo/Software/max/GUI",
-				"patcherrelativepath" : ".",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "weightCalib.maxpat",
-				"bootpath" : "~/Documents/ICST-Audio_Haptic/01_projects/TouchBox/zenodo/Software/max/GUI",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "areaCalib.maxpat",
-				"bootpath" : "~/Documents/ICST-Audio_Haptic/01_projects/TouchBox/zenodo/Software/max/GUI",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "weightCalib_XY.maxpat",
-				"bootpath" : "~/Documents/ICST-Audio_Haptic/01_projects/TouchBox/zenodo/Software/max/GUI",
+				"bootpath" : "~/_LAVORO_ZH/_research/audio-haptic/01_projects/shearBox/zenodo/Software/max/GUI",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ShearBox_serial.maxpat",
-				"bootpath" : "~/Documents/ICST-Audio_Haptic/01_projects/TouchBox/zenodo/Software/max/GUI",
+				"bootpath" : "~/_LAVORO_ZH/_research/audio-haptic/01_projects/shearBox/zenodo/Software/max/GUI",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "areaCalib.maxpat",
+				"bootpath" : "~/_LAVORO_ZH/_research/audio-haptic/01_projects/shearBox/zenodo/Software/max/GUI",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "settings.json",
+				"bootpath" : "~/_LAVORO_ZH/_research/audio-haptic/01_projects/shearBox/zenodo/Software/max/GUI",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "visualizer.js",
+				"bootpath" : "~/_LAVORO_ZH/_research/audio-haptic/01_projects/shearBox/zenodo/Software/max/GUI",
+				"patcherrelativepath" : ".",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "weightCalib.maxpat",
+				"bootpath" : "~/_LAVORO_ZH/_research/audio-haptic/01_projects/shearBox/zenodo/Software/max/GUI",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "weightCalib_XY.maxpat",
+				"bootpath" : "~/_LAVORO_ZH/_research/audio-haptic/01_projects/shearBox/zenodo/Software/max/GUI",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
