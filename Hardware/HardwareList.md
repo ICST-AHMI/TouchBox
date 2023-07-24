@@ -27,10 +27,14 @@
 
 * Custom hardware
   * 1x transparent touch panel - Plexiglass - 110 x 110 x 3 mm
-  * 1x support plate - steel slate 160 x 160 x 2 mm
-  * 1x base support -  custom milled aluminium block 80 x 80 x 20 mm
-  * 1x normal force plate - custom milled aluminium block 85 x 85 x 2 mm
-  * 4x side plate - aluminium 90 x 20 x 3 mm
+  * 4x L-shaped distancers 20 x 20 x 10 mm + anti-slip foam coupling 2 mm
+  * 1x shear base plate - steel slate 98 x 98 x 3 mm
+  * 4x feather steel support rods 0.8 x 52 mm
+  * 1x presure base support -  custom milled High Density Polyethylene block 100 x 100 x 20 mm
+  <!-- * 1x normal force plate - custom milled aluminium block 85 x 85 x 2 mm -->
+  * 4x side plate (shear sensor/support plate coupling element) - aluminium 96 x 20 x 3 mm
+  * 4x shear sensor/pressure base coupling plates 35 x 9 x 3 mm
+  * 2x L-shaped camera grips
   * MDF for optional laser-cut enclosure
 
 
