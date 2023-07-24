@@ -41,10 +41,12 @@
 * Off-the-shelf hardware
   * 3x distance washer - M5 x 18 mm
   * 1x countersink screw - M5 x 25 mm
+  * 12x socket head cap screw - M4 x 25 mm
+  * 4x countersink screw - mM4 x 30 mm
   * 4x feather steel wire (one per corner) - 0.8 x 35 mm
   * 4x actuator screw (two per actuator) - countersink screw - M3 x 40 mm
   * 4x rubber foam spacer (one at each corner)
-  * 8x headless screw (two per side plate) - M3 x 4 mm
+  <!--* 8x headless screw (two per side plate) - M3 x 4 mm -->
   * 4x IR LED PCB screws - M2 x 10 mm
   * 4x IR LED PCB distance spacer - 2 mm
   * Cables and connectors as needed
