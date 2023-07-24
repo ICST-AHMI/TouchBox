@@ -4,6 +4,7 @@
   * 1x normal force sensor - Micro Load Cell (5 kg) - Model CZL635
   * 4x lateral force sensor (one per side) - Micro Load Cell (780 g) - Model CZL616C
   * 1x OpenMV camera - Model M7 or compatible
+  * 1x ultra wide angle lens for OpenMV camera
 
 
 * Vibrotactile feedback
