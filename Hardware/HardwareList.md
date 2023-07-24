@@ -8,7 +8,7 @@
 
 
 * Vibrotactile feedback
-  * 2x compact voice-coil actuator (to be attached to the ) - Lofelt L5
+  * 2x compact voice-coil actuator (to be attached to the touch pannel) - Lofelt L5
   * 1x stereo amplifier - Dayton Audio DTA-2
 
 
