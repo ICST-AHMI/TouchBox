@@ -1,11 +1,15 @@
 {
 	"preset_data" : [ 		{
 			"number" : 1,
-			"data" : [ 5, "obj-17", "multislider", "list", 0.0, 5, "obj-15", "multislider", "list", 0.0, 5, "obj-299", "multislider", "list", 90, 5, "obj-26", "multislider", "list", 0.0, 5, "obj-19", "number", "int", 1, 5, "obj-3", "multislider", "list", 0.0, 5, "obj-8", "multislider", "list", 0.0, 5, "obj-69", "flonum", "float", 0.0, 5, "obj-75", "flonum", "float", 0.0, 5, "obj-79", "flonum", "float", 0.0, 5, "obj-80", "flonum", "float", 0.0, 6, "obj-91", "number~", "list", 0.0, 0.0, 5, "obj-98", "multislider", "list", 195.454544, 5, "obj-106", "multislider", "list", 154.545456, 5, "obj-109", "multislider", "list", 140.909088 ]
+			"data" : [ 5, "obj-17", "multislider", "list", 0.0, 5, "obj-15", "multislider", "list", 0.0, 5, "obj-299", "multislider", "list", 90, 5, "obj-26", "multislider", "list", 0.0, 5, "obj-19", "number", "int", 1, 5, "obj-3", "multislider", "list", 0.0, 5, "obj-8", "multislider", "list", 0.0, 5, "obj-69", "flonum", "float", 0.0, 5, "obj-75", "flonum", "float", 0.0, 5, "obj-79", "flonum", "float", 0.0, 5, "obj-80", "flonum", "float", 0.0, 6, "obj-91", "number~", "list", 0.0, 0.0, 5, "obj-98", "multislider", "list", 195.454543999999999, 5, "obj-106", "multislider", "list", 154.545456000000001, 5, "obj-109", "multislider", "list", 140.909087999999997 ]
 		}
 , 		{
 			"number" : 2,
-			"data" : [ 5, "obj-17", "multislider", "list", 0.0, 5, "obj-15", "multislider", "list", 0.0, 5, "obj-299", "multislider", "list", 90, 5, "obj-26", "multislider", "list", 0.0, 5, "obj-19", "number", "int", 1, 5, "obj-3", "multislider", "list", 0.0, 5, "obj-8", "multislider", "list", 0.0, 5, "obj-69", "flonum", "float", 0.0, 5, "obj-75", "flonum", "float", 0.0, 5, "obj-79", "flonum", "float", 0.0, 5, "obj-80", "flonum", "float", 0.0, 6, "obj-91", "number~", "list", 0.0, 0.0, 5, "obj-98", "multislider", "list", 252.27272, 5, "obj-106", "multislider", "list", 102.272728, 5, "obj-109", "multislider", "list", 220.454544 ]
+			"data" : [ 5, "obj-17", "multislider", "list", 0.0, 5, "obj-15", "multislider", "list", 0.0, 5, "obj-299", "multislider", "list", 90, 5, "obj-26", "multislider", "list", 0.0, 5, "obj-19", "number", "int", 1, 5, "obj-3", "multislider", "list", 0.0, 5, "obj-8", "multislider", "list", 0.0, 5, "obj-69", "flonum", "float", 0.0, 5, "obj-75", "flonum", "float", 0.0, 5, "obj-79", "flonum", "float", 0.0, 5, "obj-80", "flonum", "float", 0.0, 6, "obj-91", "number~", "list", 0.0, 0.0, 5, "obj-98", "multislider", "list", 252.272719999999993, 5, "obj-106", "multislider", "list", 102.272728000000001, 5, "obj-109", "multislider", "list", 220.454543999999999 ]
+		}
+, 		{
+			"number" : 10,
+			"data" : [ 5, "obj-17", "multislider", "list", 0.0, 5, "obj-15", "multislider", "list", 0.0, 5, "obj-299", "multislider", "list", 90, 5, "obj-26", "multislider", "list", 0.0, 5, "obj-19", "number", "int", 1, 5, "obj-3", "multislider", "list", 0.0, 5, "obj-8", "multislider", "list", 0.120891898018973, 5, "obj-69", "flonum", "float", 0.0, 5, "obj-75", "flonum", "float", 0.0, 5, "obj-79", "flonum", "float", 0.0, 5, "obj-80", "flonum", "float", 0.0, 6, "obj-91", "number~", "list", 0.0, 0.0, 5, "obj-98", "multislider", "list", 195.454543999999999, 5, "obj-106", "multislider", "list", 154.545456000000001, 5, "obj-109", "multislider", "list", 140.909087999999997 ]
 		}
  ]
 }
