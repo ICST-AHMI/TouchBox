@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ -29.0, -997.0, 1003.0, 824.0 ],
+		"rect" : [ 322.0, 158.0, 1003.0, 824.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,18 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-90",
+					"maxclass" : "number",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 376.555663999999979, 691.0, 50.0, 22.0 ]
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"bubble" : 1,
 					"bubbleside" : 2,
@@ -394,18 +406,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-93",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "int", "float", "float" ],
-					"patching_rect" : [ 669.254028000000062, 442.0, 67.0, 22.0 ],
-					"text" : "unpack i f f"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-87",
 					"maxclass" : "button",
 					"numinlets" : 1,
@@ -500,7 +500,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 376.555663999999979, 690.0, 29.5, 22.0 ],
+					"patching_rect" : [ 376.555663999999979, 660.5, 29.5, 22.0 ],
 					"text" : "+ 1"
 				}
 
@@ -2005,7 +2005,7 @@
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "sdt.scraping.plgin.maxpat",
+					"name" : "sdt.crumpling.plgin.maxpat",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
@@ -2573,7 +2573,7 @@
 					"mode" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 982.0, 174.0, 128.0, 128.0 ],
+					"patching_rect" : [ 893.231855050998092, 103.0, 128.0, 128.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 651.893480654293853, 383.309734513274179, 339.106519345706147, 424.84513274336291 ],
 					"proportion" : 0.5
@@ -2609,7 +2609,17 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-74", 0 ],
+					"midpoints" : [ 1134.5, 252.0, 692.0, 252.0 ],
+					"order" : 1,
+					"source" : [ "obj-101", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-98", 0 ],
+					"order" : 0,
 					"source" : [ "obj-101", 0 ]
 				}
 
@@ -3158,7 +3168,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-70", 0 ],
+					"destination" : [ "obj-90", 0 ],
 					"source" : [ "obj-75", 0 ]
 				}
 
@@ -3262,56 +3272,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-106", 0 ],
-					"order" : 2,
-					"source" : [ "obj-93", 2 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-110", 0 ],
-					"order" : 1,
-					"source" : [ "obj-93", 2 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-111", 0 ],
-					"order" : 0,
-					"source" : [ "obj-93", 2 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-12", 0 ],
-					"order" : 2,
-					"source" : [ "obj-93", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-20", 0 ],
-					"order" : 1,
-					"source" : [ "obj-93", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-61", 0 ],
-					"order" : 0,
-					"source" : [ "obj-93", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-74", 0 ],
-					"source" : [ "obj-93", 0 ]
+					"destination" : [ "obj-70", 0 ],
+					"source" : [ "obj-90", 0 ]
 				}
 
 			}
@@ -3388,7 +3350,22 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "sdt.crumpling.plgin.maxpat",
+				"bootpath" : "~/_LAVORO_ZH/_research/audio-haptic/01_projects/shearBox/zenodo/Software/max/examplePatches/SDT",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "sdt.crumpling~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
 				"name" : "sdt.impact~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "sdt.inertial.mxo",
 				"type" : "iLaX"
 			}
 , 			{
@@ -3397,17 +3374,6 @@
 			}
 , 			{
 				"name" : "sdt.reverb~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "sdt.scraping.plgin.maxpat",
-				"bootpath" : "~/_LAVORO_ZH/_research/audio-haptic/01_projects/shearBox/zenodo/Software/max/examplePatches/SDT",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "sdt.scraping~.mxo",
 				"type" : "iLaX"
 			}
  ],
